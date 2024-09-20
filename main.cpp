@@ -12,5 +12,19 @@ int main()
     equipo2.agregar_jugador(Jugador("Pedro", 1.88));
     equipo2.agregar_jugador(Jugador("Juan", 1.75));
 
+    vector<Equipo> equipos = {equipo1, equipo2};
+
+    // Ordenar equipos por victorias (Quick Sort)
+    vector<Equipo> equipos_ordenados = quick_sort_equipos(equipos);
+    cout << "Equipos ordenados por victorias:\n";
+    for (const Equipo &equipo : equipos_ordenados)
+        equipo.imprimir();
+
+    // Ordenar jugadores del primer equipo por altura (Merge Sort)
+    vector<Jugador> jugadores_ordenados = merge_sort_jugadores(equipos_ordenados[0].jugadores);
+    cout << "\nJugadores del equipo " << equipos_ordenados[0].nombre << " ordenados por altura:\n";
+    for (const Jugador &jugador : jugadores_ordenados)
+        jugador.imprimir();
+
     return 0;
 }
