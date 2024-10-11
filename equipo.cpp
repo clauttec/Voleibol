@@ -1,26 +1,112 @@
 #include "equipo.h"
 
 // Implementación de la clase Jugador
-Jugador::Jugador(string nombre, float altura) : nombre(nombre), altura(altura) {}
+Jugador::Jugador(string nombre, float altura) : nombre(nombre), altura(altura), siguiente(nullptr), anterior(nullptr) {}
 
 void Jugador::imprimir() const
 {
     cout << nombre << ": " << altura << "m" << endl;
 }
 
+// Implementación de la clase ListaJugadores
+ListaJugadores::ListaJugadores() : cabeza(nullptr), cola(nullptr) {}
+
+ListaJugadores::~ListaJugadores()
+{
+    Jugador *actual = cabeza;
+    while (actual)
+    {
+        Jugador *siguiente = actual->siguiente;
+        delete actual;
+        actual = siguiente;
+    }
+}
+
+void ListaJugadores::agregar_jugador(string nombre, float altura)
+{
+    Jugador *nuevo_jugador = new Jugador(nombre, altura);
+
+    if (!cabeza)
+    {
+        cabeza = cola = nuevo_jugador;
+    }
+    else
+    {
+        cola->siguiente = nuevo_jugador;
+        nuevo_jugador->anterior = cola;
+        cola = nuevo_jugador;
+    }
+}
+
+void ListaJugadores::imprimir_jugadores() const
+{
+    Jugador *actual = cabeza;
+    while (actual)
+    {
+        actual->imprimir();
+        actual = actual->siguiente;
+    }
+}
+
+void ListaJugadores::eliminar_jugador(string nombre)
+{
+    Jugador *actual = cabeza;
+
+    while (actual && actual->nombre != nombre)
+    {
+        actual = actual->siguiente;
+    }
+
+    if (actual)
+    {
+        if (actual->anterior)
+        {
+            actual->anterior->siguiente = actual->siguiente;
+        }
+        else
+        {
+            cabeza = actual->siguiente;
+        }
+
+        if (actual->siguiente)
+        {
+            actual->siguiente->anterior = actual->anterior;
+        }
+        else
+        {
+            cola = actual->anterior;
+        }
+
+        delete actual;
+    }
+}
+
+vector<Jugador> ListaJugadores::a_vector() const
+{
+    vector<Jugador> jugadores;
+    Jugador *actual = cabeza;
+    while (actual)
+    {
+        jugadores.push_back(*actual);
+        actual = actual->siguiente;
+    }
+    return jugadores;
+}
+
 // Implementación de la clase Equipo
 Equipo::Equipo(string nombre, int victorias, int derrotas, int puntos)
     : nombre(nombre), victorias(victorias), derrotas(derrotas), puntos(puntos) {}
 
-void Equipo::agregar_jugador(Jugador jugador)
+void Equipo::agregar_jugador(string nombre, float altura)
 {
-    jugadores.push_back(jugador);
+    jugadores.agregar_jugador(nombre, altura);
 }
 
 void Equipo::imprimir() const
 {
     cout << nombre << ": " << victorias << " victorias, "
          << derrotas << " derrotas, " << puntos << " puntos" << endl;
+    jugadores.imprimir_jugadores();
 }
 
 // Implementación de Quick Sort para equipos
