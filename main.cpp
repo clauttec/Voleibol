@@ -1,30 +1,45 @@
 #include "equipo.h"
+#include <vector>
 
 int main()
 {
-    // Crear equipos
-    Equipo equipo1("Tigres", 5, 1, 15);
-    equipo1.agregar_jugador(Jugador("Carlos", 1.85));
-    equipo1.agregar_jugador(Jugador("Luis", 1.90));
-    equipo1.agregar_jugador(Jugador("Mario", 1.78));
+    // Crear un equipo
+    Equipo equipo("Tigres", 10, 2, 32);
 
-    Equipo equipo2("Águilas", 4, 2, 12);
-    equipo2.agregar_jugador(Jugador("Pedro", 1.88));
-    equipo2.agregar_jugador(Jugador("Juan", 1.75));
+    // Agregar jugadores al equipo
+    equipo.agregar_jugador("Juan", 1.85);
+    equipo.agregar_jugador("Pedro", 1.78);
+    equipo.agregar_jugador("Luis", 1.90);
 
-    vector<Equipo> equipos = {equipo1, equipo2};
+    // Imprimir el equipo y sus jugadores
+    equipo.imprimir();
 
-    // Ordenar equipos por victorias (Quick Sort)
-    vector<Equipo> equipos_ordenados = quick_sort_equipos(equipos);
-    cout << "Equipos ordenados por victorias:\n";
-    for (const Equipo &equipo : equipos_ordenados)
-        equipo.imprimir();
+    // Eliminar un jugador
+    equipo.jugadores.eliminar_jugador("Pedro");
 
-    // Ordenar jugadores del primer equipo por altura (Merge Sort)
-    vector<Jugador> jugadores_ordenados = merge_sort_jugadores(equipos_ordenados[0].jugadores);
-    cout << "\nJugadores del equipo " << equipos_ordenados[0].nombre << " ordenados por altura:\n";
-    for (const Jugador &jugador : jugadores_ordenados)
+    // Imprimir el equipo después de eliminar a Pedro
+    cout << "\nDespués de eliminar a Pedro:\n";
+    equipo.imprimir();
+
+    // Prueba de ordenamiento Merge Sort para jugadores
+    vector<Jugador> jugadores = equipo.jugadores.a_vector();
+    jugadores = merge_sort_jugadores(jugadores);
+
+    cout << "\nJugadores ordenados por altura:\n";
+    for (const Jugador &jugador : jugadores)
+    {
         jugador.imprimir();
+    }
+
+    // Prueba de Quick Sort para equipos
+    vector<Equipo> equipos = {equipo, Equipo("Leones", 8, 3, 28), Equipo("Águilas", 12, 1, 36)};
+    equipos = quick_sort_equipos(equipos);
+
+    cout << "\nEquipos ordenados por victorias:\n";
+    for (const Equipo &eq : equipos)
+    {
+        eq.imprimir();
+    }
 
     return 0;
 }
