@@ -2,7 +2,6 @@
 #define EQUIPO_H
 
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 
@@ -11,9 +10,25 @@ class Jugador
 public:
     string nombre;
     float altura;
+    Jugador *siguiente;
+    Jugador *anterior;
 
     Jugador(string nombre, float altura);
     void imprimir() const;
+};
+
+class ListaJugadores
+{
+private:
+    Jugador *cabeza;
+    Jugador *cola;
+
+public:
+    ListaJugadores();
+    ~ListaJugadores();
+    void agregar_jugador(string nombre, float altura);
+    void imprimir_jugadores() const;
+    void eliminar_jugador(string nombre);
 };
 
 class Equipo
@@ -23,17 +38,11 @@ public:
     int victorias;
     int derrotas;
     int puntos;
-    vector<Jugador> jugadores;
+    ListaJugadores jugadores;
 
     Equipo(string nombre, int victorias, int derrotas, int puntos);
-    void agregar_jugador(Jugador jugador);
+    void agregar_jugador(string nombre, float altura);
     void imprimir() const;
 };
-
-// Declaración de Quick Sort para ordenar equipos por victorias
-vector<Equipo> quick_sort_equipos(vector<Equipo> equipos);
-
-// Declaración de Merge Sort para ordenar jugadores por altura
-vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores);
 
 #endif // EQUIPO_H
