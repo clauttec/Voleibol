@@ -29,6 +29,7 @@ int main()
         jugador.imprimir();
     }
 
+    /*
     // Prueba de Quick Sort para equipos
     vector<Equipo> equipos = {equipo, Equipo("Leones", 8, 3, 28), Equipo("Águilas", 12, 1, 36)};
     equipos = quick_sort_equipos(equipos);
@@ -38,6 +39,7 @@ int main()
     {
         eq.imprimir();
     }
+    */
 
     return 0;
 }
