@@ -42,6 +42,7 @@ public:
     int puntos;
     ListaJugadores jugadores;
 
+    Equipo();
     Equipo(string nombre, int victorias, int derrotas, int puntos);
     void agregar_jugador(string nombre, float altura);
     void imprimir() const;

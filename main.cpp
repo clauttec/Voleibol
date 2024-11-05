@@ -4,13 +4,10 @@
 
 int main()
 {
-    // Crear un equipo
-    Equipo equipo("Tigres", 10, 2, 32);
+    // Crear un equipo inicial vacio
+    Equipo equipo;
 
-    // Agregar jugadores al equipo
-    equipo.agregar_jugador("Juan", 1.85);
-    equipo.agregar_jugador("Pedro", 1.78);
-    equipo.agregar_jugador("Luis", 1.90);
+    equipo.cargar_archivo("equipo.txt", equipo);
 
     // Imprimir el equipo y sus jugadores
     equipo.imprimir();

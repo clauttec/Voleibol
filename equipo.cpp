@@ -96,6 +96,9 @@ vector<Jugador> ListaJugadores::a_vector() const
     return jugadores;
 }
 
+// Implementacion del constructor por default
+Equipo::Equipo() : nombre(""), victorias(0), derrotas(0), puntos(0) {}
+
 // Implementación de la clase Equipo
 Equipo::Equipo(string nombre, int victorias, int derrotas, int puntos)
     : nombre(nombre), victorias(victorias), derrotas(derrotas), puntos(puntos) {}

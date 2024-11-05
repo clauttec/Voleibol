@@ -1,0 +1,4 @@
+Tigres 10 2 32
+Juan 1.85
+Pedro 1.78
+Luis 1.90
