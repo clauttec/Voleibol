@@ -1,4 +1,7 @@
 #include "equipo.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 // Implementación de la clase Jugador
 Jugador::Jugador(string nombre, float altura) : nombre(nombre), altura(altura), siguiente(nullptr), anterior(nullptr) {}
@@ -107,6 +110,45 @@ void Equipo::imprimir() const
     cout << nombre << ": " << victorias << " victorias, "
          << derrotas << " derrotas, " << puntos << " puntos" << endl;
     jugadores.imprimir_jugadores();
+}
+
+void Equipo::cargar_archivo(const string &nombre_archivo, Equipo &equipo)
+{
+    ifstream archivo(nombre_archivo);
+
+    if (!archivo.is_open())
+    {
+        cerr << "No se pudo abrir el archivo: " << nombre_archivo << endl;
+        return;
+    }
+
+    string linea;
+    bool primera_linea = true;
+
+    while (getline(archivo, linea))
+    {
+        stringstream ss(linea);
+
+        if (primera_linea)
+        {
+            string nombre_equipo;
+            int victorias, derrotas, puntos;
+
+            ss >> nombre_equipo >> victorias >> derrotas >> puntos;
+            equipo = Equipo(nombre_equipo, victorias, derrotas, puntos); // Inicializar equipo
+            primera_linea = false;
+        }
+        else
+        {
+            string nombre_jugador;
+            float altura;
+
+            ss >> nombre_jugador >> altura;
+            equipo.agregar_jugador(nombre_jugador, altura); // Agregar jugador al equipo
+        }
+    }
+
+    archivo.close();
 }
 
 // Implementación de Quick Sort para equipos
