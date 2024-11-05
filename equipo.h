@@ -45,6 +45,7 @@ public:
     Equipo(string nombre, int victorias, int derrotas, int puntos);
     void agregar_jugador(string nombre, float altura);
     void imprimir() const;
+    static void cargar_archivo(const string &nombre_archivo, Equipo &equipo);
 };
 
 // Declaración de Quick Sort para ordenar equipos por victorias
