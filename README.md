@@ -12,14 +12,14 @@ Se ha implementado el algoritmo Quick Sort para ordenar los equipos por el núme
 
 Para macOS/Linux
 ```
-g++ main.cpp Equipo.cpp -o torneo
-./torneo
+g++ -std=c++17 -g main.cpp equipo.cpp -o main 
+./main
 ```
 
 Para windows
 ```
-g++ main.cpp Equipo.cpp -o torneo.exe
-torneo.exe
+g++ -std=c++17 -g main.cpp equipo.cpp -o main.exe
+main.exe
 ```
 
 ### Comprobar subcompetencias
