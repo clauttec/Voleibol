@@ -29,6 +29,16 @@ int main()
         jugador.imprimir();
     }
 
+    // Agregar nuevo jugador al equipo
+    equipo.agregar_jugador("Jesus", 1.92);
+
+    // Imprimir equipo despues de agregar a Jesus
+    cout << "\nDespues de agregar a Jesus:\n";
+    equipo.imprimir();
+
+    // Guardar los datos actualizados en el archivo
+    equipo.escribir_en_archivo("equipo_actualizado.txt");
+
     /*
     // Prueba de Quick Sort para equipos
     vector<Equipo> equipos = {equipo, Equipo("Leones", 8, 3, 28), Equipo("Águilas", 12, 1, 36)};
