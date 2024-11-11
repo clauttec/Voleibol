@@ -154,6 +154,28 @@ void Equipo::cargar_archivo(const string &nombre_archivo, Equipo &equipo)
     archivo.close();
 }
 
+void Equipo::escribir_en_archivo(const string &nombre_archivo) const
+{
+    ofstream archivo(nombre_archivo);
+
+    if (!archivo.is_open())
+    {
+        cerr << "No se pudo abrir el archivo para escribir: " << nombre_archivo << endl;
+        return;
+    }
+
+    // Guardar los datos del equipo
+    archivo << nombre << " " << victorias << " " << derrotas << " " << puntos << endl;
+
+    // Guardar los datos de cada jugador
+    for (const auto &jugador : jugadores.a_vector())
+    { // 'a_vector()' convierte la lista a un vector
+        archivo << jugador.nombre << " " << jugador.altura << endl;
+    }
+
+    archivo.close();
+}
+
 // Implementación de Quick Sort para equipos
 vector<Equipo> quick_sort_equipos(vector<Equipo> equipos)
 {

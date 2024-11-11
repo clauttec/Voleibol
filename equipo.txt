@@ -2,3 +2,5 @@ Tigres 10 2 32
 Juan 1.85
 Pedro 1.78
 Luis 1.90
+Juan 2.10
+Mauricio 1.83

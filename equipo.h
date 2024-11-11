@@ -47,6 +47,7 @@ public:
     void agregar_jugador(string nombre, float altura);
     void imprimir() const;
     static void cargar_archivo(const string &nombre_archivo, Equipo &equipo);
+    void escribir_en_archivo(const string &nombre_archivo) const;
 };
 
 // Declaración de Quick Sort para ordenar equipos por victorias
