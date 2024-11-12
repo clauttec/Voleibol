@@ -30,6 +30,8 @@ Seleccione el metodo de quick sort para ordenar los equipos debido a su eficienc
 
 La estrctura seleccionada (lista doblemente ligada) nos permite un acceso secuencial eficiente en ambas direcciones, teniendo una complejidad de solo O(1) al momento de insertar o eliminar y una complejidad de O(n) al momento de recorrer por completo la lista.
 
+Cada funcion cuenta con su respectivo comentario indicando el nivel de complejidad de este mismo en su mejor, peor y promedio de caso. Puedo concluir que la complejidad del programa depende de dos principales funciones, el quick sort y el merge sort. Esto debido a que son las funciones de mayor nivel de complejidad, una vez aclarado esto, puedo decir que la complejidad del programa en su mejor caso es de O(n log(n)), su promedio es de O(n log(n)) y su peor caso de es de O(n^2) esto ultimo debido a la funcion de quick sort que tiene esta misma complejidad en su peor caso.
+
 #### SICT0302 Toma decisiones
 
 Para ordenar a los jugadores utilice el metodo merge sort debido a su complejidad consistente O(nlogn) en todos los casos. Merge Sort es ideal porque mantiene el orden original entre jugadores que tienen la misma altura, si los hubiera. Aunque utiliza más memoria, esto no es un problema dado que hay pocos jugadores en cada equipo, y su buen rendimiento y consistencia lo hacen adecuado en este caso.

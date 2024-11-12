@@ -25,6 +25,16 @@ ListaJugadores::~ListaJugadores()
     }
 }
 
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(1)
+ * Promedio: O(1)
+ *
+ * Se agrega el jugador al final de la lista sin importar el tamano de la lista
+ */
+
 void ListaJugadores::agregar_jugador(string nombre, float altura)
 {
     Jugador *nuevo_jugador = new Jugador(nombre, altura);
@@ -41,6 +51,16 @@ void ListaJugadores::agregar_jugador(string nombre, float altura)
     }
 }
 
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(n)
+ * Promedio: O(n)
+ *
+ * La funcion recorre cada nodo de la lista para imprimirlo
+ */
+
 void ListaJugadores::imprimir_jugadores() const
 {
     Jugador *actual = cabeza;
@@ -50,6 +70,16 @@ void ListaJugadores::imprimir_jugadores() const
         actual = actual->siguiente;
     }
 }
+
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(n)
+ * Promedio: O(n/2)
+ *
+ * La funcion busca el jugador, este puede estar al principio, al final o en cualquier posicion
+ */
 
 void ListaJugadores::eliminar_jugador(string nombre)
 {
@@ -84,6 +114,16 @@ void ListaJugadores::eliminar_jugador(string nombre)
     }
 }
 
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(n)
+ * Promedio: O(n)
+ *
+ * La funcion recorre cada nodo para convertirlo en un elemnto del vector
+ */
+
 vector<Jugador> ListaJugadores::a_vector() const
 {
     vector<Jugador> jugadores;
@@ -114,6 +154,16 @@ void Equipo::imprimir() const
          << derrotas << " derrotas, " << puntos << " puntos" << endl;
     jugadores.imprimir_jugadores();
 }
+
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(n)
+ * Promedio: O(n)
+ *
+ * La funcion recorre cada linea del archivo
+ */
 
 void Equipo::cargar_archivo(const string &nombre_archivo, Equipo &equipo)
 {
@@ -154,6 +204,16 @@ void Equipo::cargar_archivo(const string &nombre_archivo, Equipo &equipo)
     archivo.close();
 }
 
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(1)
+ * Peor caso: O(n)
+ * Promedio: O(n)
+ *
+ * La complejidad depende de la cantidad de jugadores del equipo. La complejidad es lineal respecto al numero de jugadores
+ */
+
 void Equipo::escribir_en_archivo(const string &nombre_archivo) const
 {
     ofstream archivo(nombre_archivo);
@@ -175,6 +235,16 @@ void Equipo::escribir_en_archivo(const string &nombre_archivo) const
 
     archivo.close();
 }
+
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(n logn)
+ * Peor caso: O(n^2)
+ * Promedio: O(n logn)
+ *
+ * Si el vector esta ordenado en orden inverso podria aumentar la complejidad, pero en la mayoria de casos el orden es aleatorio
+ */
 
 // Implementación de Quick Sort para equipos
 vector<Equipo> quick_sort_equipos(vector<Equipo> equipos)
@@ -201,6 +271,14 @@ vector<Equipo> quick_sort_equipos(vector<Equipo> equipos)
 
     return menores;
 }
+
+/*
+ * Complejidad
+ *
+ * Mejor caso: O(n logn)
+ * Peor caso: O(n logn)
+ * Promedio: O(n logn)
+ */
 
 // Implementación de Merge Sort para jugadores
 vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores)
