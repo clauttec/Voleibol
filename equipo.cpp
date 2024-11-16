@@ -311,3 +311,87 @@ vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores)
 
     return resultado;
 }
+
+void mostrar_menu()
+{
+    cout << "\n--- Menú Principal ---" << endl;
+    cout << "1. Agregar un nuevo equipo" << endl;
+    cout << "2. Agregar jugador a un equipo" << endl;
+    cout << "3. Eliminar jugador de un equipo" << endl;
+    cout << "4. Ordenar equipos por victorias" << endl;
+    cout << "5. Ordenar jugadores de un equipo por altura" << endl;
+    cout << "6. Guardar equipo en archivo" << endl;
+    cout << "7. Salir" << endl;
+    cout << "Seleccione una opción: ";
+}
+
+void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos)
+{
+    while (true)
+    {
+        // Mostramos menu y pedimos que seleccione opcion
+        mostrar_menu();
+        cin >> opcion;
+
+        // Switch para cada opcion del menu
+        switch (opcion)
+        {
+
+        // Agregar un nuevo equipo
+        case 1:
+        {
+            // Solicitamos el nombre del equipo y comprobamos que sea valido
+            cout << "Ingresa el nombre del equipo: ";
+            cin >> nombre_equipo;
+
+            while (nombre_equipo != " ")
+            {
+                cout << "Nombre de equipo invalido, por favor intentalo de nuevo: ";
+                cin >> nombre_equipo;
+            }
+
+            // Solicitamos el numero de victorias del equipo y comprobamos que sea valido
+            cout << "Ingresa el numero de victorias del equipo";
+            cin >> victorias;
+
+            while (victorias < 0)
+            {
+                cout << "Numero de victorias invalido, por favor intentalo de nuevo: ";
+                cin >> victorias;
+            }
+
+            // Solicitamos el numero de derrotas del equipo y comprobamos que sea valido
+            cout << "Ingresa el numero de derrotas del equipo";
+            cin >> derrotas;
+
+            while (derrotas < 0)
+            {
+                cout << "Numero de victorias invalido, por favor intentalo de nuevo: ";
+                cin >> derrotas;
+            }
+
+            // Solicitamos el numero de victorias del equipo y comprobamos que sea valido
+            cout << "Ingresa el numero de victorias del equipo";
+            cin >> victorias;
+
+            while (victorias < 0)
+            {
+                cout << "Numero de victorias invalido, por favor intentalo de nuevo: ";
+                cin >> victorias;
+            }
+
+            // Agregamos el equipo a la lista de equipos
+            equipos.emplace_back(nombre_equipo, victorias, derrotas, puntos);
+            cout << "Equipo agregado exitosamente.\n";
+        }
+        }
+        cout << "¿Desea realizar otra operación? (s/n): ";
+        char continuar;
+        cin >> continuar;
+        if (continuar == 'n' || continuar == 'N')
+        {
+            cout << "Gracias por usar el programa. ¡Hasta pronto!\n";
+            break;
+        }
+    }
+}

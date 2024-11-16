@@ -56,4 +56,10 @@ vector<Equipo> quick_sort_equipos(vector<Equipo> equipos);
 // Declaración de Merge Sort para ordenar jugadores por altura
 vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores);
 
+// Declaracion de funcion para mostrar menu
+void mostrar_menu();
+
+// Declaracion de funcion para darle funcionalidad al menu
+void menu_principal();
+
 #endif // EQUIPO_H
