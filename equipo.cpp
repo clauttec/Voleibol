@@ -470,6 +470,19 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             }
             break;
         }
+
+        // Ordenar equipor por victorias
+        case 4:
+        {
+            equipos = quick_sort_equipos(equipos);
+            cout << "Equipos ordenados por victorias: \n";
+
+            for (auto &equipo : equipos)
+            {
+                equipo.imprimir();
+            }
+            break;
+        }
         }
         cout << "¿Desea realizar otra operación? (s/n): ";
         char continuar;
