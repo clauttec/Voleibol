@@ -71,6 +71,19 @@ void ListaJugadores::imprimir_jugadores() const
     }
 }
 
+bool ListaJugadores::existe_jugador(string nombre) const
+{
+    Jugador *actual = cabeza;
+    while (actual != nullptr)
+    {
+        if (actual->nombre == nombre)
+        {
+            return true; // El jugador existe
+        }
+        actual = actual->siguiente;
+    }
+    return false; // No se encontró el jugador
+}
 /*
  * Complejidad
  *
@@ -83,34 +96,40 @@ void ListaJugadores::imprimir_jugadores() const
 
 void ListaJugadores::eliminar_jugador(string nombre)
 {
-    Jugador *actual = cabeza;
-
-    while (actual && actual->nombre != nombre)
+    if (!existe_jugador(nombre))
     {
-        actual = actual->siguiente;
+        cout << "El jugador con nombre \"" << nombre << "\" no existe en el equipo." << endl;
+        return;
     }
 
-    if (actual)
+    Jugador *actual = cabeza;
+    while (actual != nullptr)
     {
-        if (actual->anterior)
+        if (actual->nombre == nombre)
         {
-            actual->anterior->siguiente = actual->siguiente;
-        }
-        else
-        {
-            cabeza = actual->siguiente;
-        }
+            // Ajustar los punteros de los nodos
+            if (actual->anterior)
+            {
+                actual->anterior->siguiente = actual->siguiente;
+            }
+            else
+            {
+                cabeza = actual->siguiente; // Si es el primero
+            }
+            if (actual->siguiente)
+            {
+                actual->siguiente->anterior = actual->anterior;
+            }
+            else
+            {
+                cola = actual->anterior; // Si es el último
+            }
 
-        if (actual->siguiente)
-        {
-            actual->siguiente->anterior = actual->anterior;
+            delete actual; // Liberar la memoria
+            cout << "El jugador \"" << nombre << "\" ha sido eliminado." << endl;
+            return;
         }
-        else
-        {
-            cola = actual->anterior;
-        }
-
-        delete actual;
+        actual = actual->siguiente;
     }
 }
 
@@ -399,8 +418,46 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
                     cout << "Ingrese la altura del jugador: ";
                     cin >> altura;
 
+                    while (altura < 0)
+                    {
+                        cout << "Altura invalida, intentalo de nuevo: ";
+                        cin >> altura;
+                    }
+
                     equipo.agregar_jugador(nombre_jugador, altura);
                     cout << "Jugador agregado exitosamente";
+
+                    equipo_encontrado = true;
+                    break;
+                }
+            }
+
+            if (equipo_encontrado != true)
+            {
+                cout << "Equipo no encontrado. \n";
+            }
+            break;
+        }
+
+        // Eliminar jugador de un equipo
+        case 3:
+        {
+            // Solicitamos el nombre del equipo del cual se desea eliminar el jugador
+            cout << "Ingresa el nombre del equipo: ";
+            cin >> nombre_equipo;
+
+            bool equipo_encontrado = false;
+
+            // Ciclo for para buscar el equipo y eliminar jugador
+            for (auto &equipo : equipos)
+            {
+                if (equipo.get_nombre() == nombre_equipo)
+                {
+                    cout << "Ingrese el nombre del jugador a eliminar: ";
+                    cin >> nombre_jugador;
+
+                    // HACE FALTA VERIFICAR QUE EL JUGADOR ESTE EN EL EQUIPO
+                    equipo.jugadores.eliminar_jugador(nombre_jugador);
 
                     equipo_encontrado = true;
                     break;

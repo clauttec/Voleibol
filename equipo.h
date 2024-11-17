@@ -16,6 +16,9 @@ public:
 
     Jugador(string nombre, float altura);
     void imprimir() const;
+
+    // Getters
+    string get_nombre_jugador() { return nombre; }
 };
 
 class ListaJugadores
@@ -31,6 +34,7 @@ public:
     void imprimir_jugadores() const;
     void eliminar_jugador(string nombre);
     vector<Jugador> a_vector() const; // Para convertir la lista ligada a vector
+    bool existe_jugador(string nombre) const;
 };
 
 class Equipo
