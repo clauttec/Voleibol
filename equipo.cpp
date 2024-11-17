@@ -471,7 +471,7 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             break;
         }
 
-        // Ordenar equipor por victorias
+        // Ordenar equipos por victorias
         case 4:
         {
             equipos = quick_sort_equipos(equipos);
@@ -480,6 +480,40 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             for (auto &equipo : equipos)
             {
                 equipo.imprimir();
+            }
+            break;
+        }
+
+        // Ordenar jugadores de un equipo por altura
+        case 5:
+        {
+            // Solicitamos el nombre del equipo del cual se desea ordenar jugadores
+            cout << "Ingresa el nombre del equipo: ";
+            cin >> nombre_equipo;
+
+            bool equipo_encontrado = false;
+
+            for (auto &equipo : equipos)
+            {
+                if (equipo.get_nombre() == nombre_equipo)
+                {
+                    vector<Jugador> jugadores = equipo.jugadores.a_vector();
+                    jugadores = merge_sort_jugadores(jugadores);
+
+                    cout << "Jugadores de " << nombre_equipo << " ordenados por altura: \n";
+
+                    for (auto &jugador : jugadores)
+                    {
+                        jugador.imprimir();
+                    }
+
+                    equipo_encontrado = true;
+                    break;
+                }
+            }
+            if (!equipo_encontrado)
+            {
+                cout << "Equipo no encontrado. \n";
             }
             break;
         }
