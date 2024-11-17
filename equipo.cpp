@@ -340,18 +340,12 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
         // Agregar un nuevo equipo
         case 1:
         {
-            // Solicitamos el nombre del equipo y comprobamos que sea valido
+            // Solicitamos el nombre del equipo
             cout << "Ingresa el nombre del equipo: ";
             cin >> nombre_equipo;
 
-            while (nombre_equipo != " ")
-            {
-                cout << "Nombre de equipo invalido, por favor intentalo de nuevo: ";
-                cin >> nombre_equipo;
-            }
-
             // Solicitamos el numero de victorias del equipo y comprobamos que sea valido
-            cout << "Ingresa el numero de victorias del equipo";
+            cout << "Ingresa el numero de victorias del equipo: ";
             cin >> victorias;
 
             while (victorias < 0)
@@ -366,23 +360,58 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
 
             while (derrotas < 0)
             {
-                cout << "Numero de victorias invalido, por favor intentalo de nuevo: ";
+                cout << "Numero de derrotas invalido, por favor intentalo de nuevo: ";
                 cin >> derrotas;
             }
 
             // Solicitamos el numero de victorias del equipo y comprobamos que sea valido
-            cout << "Ingresa el numero de victorias del equipo";
-            cin >> victorias;
+            cout << "Ingresa el numero de puntos del equipo";
+            cin >> puntos;
 
-            while (victorias < 0)
+            while (puntos < 0)
             {
-                cout << "Numero de victorias invalido, por favor intentalo de nuevo: ";
-                cin >> victorias;
+                cout << "Numero de puntos invalido, por favor intentalo de nuevo: ";
+                cin >> puntos;
             }
 
             // Agregamos el equipo a la lista de equipos
             equipos.emplace_back(nombre_equipo, victorias, derrotas, puntos);
             cout << "Equipo agregado exitosamente.\n";
+        }
+
+        // Agregar jugador a un equipo
+        case 2:
+        {
+            // Solicitamos el nombre del equipo al que se agregara el jugador
+            cout << "Ingresa el nombre del equipo: ";
+            cin >> nombre_equipo;
+
+            bool equipo_encontrado = false;
+
+            // Ciclo for para buscar el equipo y agregar jugador
+            for (auto &equipo : equipos)
+            {
+                if (equipo.get_nombre() == nombre_equipo)
+                {
+                    cout << "Ingrese el nombre del jugador: ";
+                    cin >> nombre_jugador;
+
+                    cout << "Ingrese la altura del jugador: ";
+                    cin >> altura;
+
+                    equipo.agregar_jugador(nombre_jugador, altura);
+                    cout << "Jugador agregado exitosamente";
+
+                    equipo_encontrado = true;
+                    break;
+                }
+            }
+
+            if (equipo_encontrado != true)
+            {
+                cout << "Equipo no encontrado. \n";
+            }
+            break;
         }
         }
         cout << "¿Desea realizar otra operación? (s/n): ";

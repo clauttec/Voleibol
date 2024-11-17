@@ -48,6 +48,9 @@ public:
     void imprimir() const;
     static void cargar_archivo(const string &nombre_archivo, Equipo &equipo);
     void escribir_en_archivo(const string &nombre_archivo) const;
+
+    // Getters
+    string get_nombre() { return nombre; }
 };
 
 // Declaración de Quick Sort para ordenar equipos por victorias
@@ -60,6 +63,6 @@ vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores);
 void mostrar_menu();
 
 // Declaracion de funcion para darle funcionalidad al menu
-void menu_principal();
+void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos);
 
 #endif // EQUIPO_H
