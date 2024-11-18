@@ -344,7 +344,7 @@ void mostrar_menu()
     cout << "Seleccione una opción: ";
 }
 
-void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos)
+int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos)
 {
     while (true)
     {
@@ -542,6 +542,16 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             }
             break;
         }
+
+        // Salir
+        case 7:
+        {
+            cout << "Gracias por usar el programa. Hasta pronto! \n";
+            return 0;
+        }
+
+        default:
+            cout << "Opcion no valida, intentalo de nuevo. \n";
         }
         cout << "¿Desea realizar otra operación? (s/n): ";
         char continuar;
@@ -552,4 +562,5 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             break;
         }
     }
+    return 0;
 }

@@ -67,6 +67,6 @@ vector<Jugador> merge_sort_jugadores(vector<Jugador> jugadores);
 void mostrar_menu();
 
 // Declaracion de funcion para darle funcionalidad al menu
-void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos);
+int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos);
 
 #endif // EQUIPO_H
