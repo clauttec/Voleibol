@@ -340,7 +340,9 @@ void mostrar_menu()
     cout << "4. Ordenar equipos por victorias" << endl;
     cout << "5. Ordenar jugadores de un equipo por altura" << endl;
     cout << "6. Guardar equipo en archivo" << endl;
-    cout << "7. Salir" << endl;
+    cout << "7. Guardar todo en archivo" << endl;
+    cout << "8. Cargar datos" << endl;
+    cout << "9. Salir" << endl;
     cout << "Seleccione una opción: ";
 }
 
@@ -543,8 +545,24 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
             break;
         }
 
-        // Salir
+        // Guardar todo en archivo
         case 7:
+        {
+            cout << "Ingresa el nombre que deseas que lleve el archivo: ";
+            cin >> nombre_archivo;
+
+            for (auto &equipo : equipos)
+            {
+                equipo.escribir_en_archivo(nombre_archivo);
+            }
+
+            cout << "Los datos se han guardado exitosamente. \n";
+
+            break;
+        }
+
+        // Salir
+        case 9:
         {
             cout << "Gracias por usar el programa. Hasta pronto! \n";
             return 0;
