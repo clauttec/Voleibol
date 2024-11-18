@@ -517,6 +517,31 @@ void menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, st
             }
             break;
         }
+
+        // Guardar equipo en archivo
+        case 6:
+        {
+            cout << "Ingresa el nombre del equipo a guardar: ";
+            cin >> nombre_equipo;
+            bool equipo_encontrado = false;
+            for (auto &equipo : equipos)
+            {
+                if (equipo.get_nombre() == nombre_equipo)
+                {
+                    nombre_archivo = nombre_equipo;
+                    equipo.escribir_en_archivo(nombre_archivo);
+
+                    cout << "El equipo se ha guardado en el archivo: " << nombre_archivo << ".txt";
+
+                    equipo_encontrado = true;
+                }
+            }
+            if (!equipo_encontrado)
+            {
+                cout << "Equipo no encontrado. \n";
+            }
+            break;
+        }
         }
         cout << "¿Desea realizar otra operación? (s/n): ";
         char continuar;
