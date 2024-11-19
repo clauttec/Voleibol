@@ -377,7 +377,7 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
             }
 
             // Solicitamos el numero de derrotas del equipo y comprobamos que sea valido
-            cout << "Ingresa el numero de derrotas del equipo";
+            cout << "Ingresa el numero de derrotas del equipo: ";
             cin >> derrotas;
 
             while (derrotas < 0)
@@ -387,7 +387,7 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
             }
 
             // Solicitamos el numero de victorias del equipo y comprobamos que sea valido
-            cout << "Ingresa el numero de puntos del equipo";
+            cout << "Ingresa el numero de puntos del equipo: ";
             cin >> puntos;
 
             while (puntos < 0)
@@ -399,6 +399,8 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
             // Agregamos el equipo a la lista de equipos
             equipos.emplace_back(nombre_equipo, victorias, derrotas, puntos);
             cout << "Equipo agregado exitosamente.\n";
+
+            break;
         }
 
         // Agregar jugador a un equipo
