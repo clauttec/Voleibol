@@ -266,20 +266,20 @@ void Equipo::escribir_en_archivo(const string &nombre_archivo) const
  */
 
 // Implementación de Quick Sort para equipos
-vector<Equipo> quick_sort_equipos(vector<Equipo> equipos)
+vector<Equipo *> quick_sort_equipos(vector<Equipo *> equipos)
 {
     if (equipos.size() <= 1)
     {
         return equipos;
     }
 
-    Equipo pivot = equipos[0];
-    vector<Equipo> menores;
-    vector<Equipo> mayores;
+    Equipo *pivot = equipos[0];
+    vector<Equipo *> menores;
+    vector<Equipo *> mayores;
 
     for (int i = 1; i < equipos.size(); i++)
     {
-        if (equipos[i].victorias <= pivot.victorias)
+        if (equipos[i]->victorias <= pivot->victorias)
         {
             menores.push_back(equipos[i]);
         }
@@ -485,12 +485,18 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
         // Ordenar equipos por victorias
         case 4:
         {
-            equipos = quick_sort_equipos(equipos);
-            cout << "Equipos ordenados por victorias: \n";
-
+            vector<Equipo *> equipos_ordenados;
             for (auto &equipo : equipos)
             {
-                equipo.imprimir();
+                equipos_ordenados.push_back(&equipo);
+            }
+
+            equipos_ordenados = quick_sort_equipos(equipos_ordenados);
+            cout << "Equipos ordenados por victorias: \n";
+
+            for (auto &equipo : equipos_ordenados)
+            {
+                equipo->imprimir();
             }
             break;
         }
