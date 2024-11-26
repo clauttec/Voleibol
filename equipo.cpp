@@ -340,10 +340,9 @@ void mostrar_menu()
     cout << "4. Ordenar equipos por victorias" << endl;
     cout << "5. Ordenar jugadores de un equipo por altura" << endl;
     cout << "6. Guardar equipo en archivo" << endl;
-    cout << "7. Guardar todo en archivo" << endl;
-    cout << "8. Cargar datos externos" << endl;
-    cout << "9. Imprimir equipos" << endl;
-    cout << "10. Salir" << endl;
+    cout << "7. Cargar datos externos" << endl;
+    cout << "8. Imprimir equipos" << endl;
+    cout << "9. Salir" << endl;
     cout << "Seleccione una opción: ";
 }
 
@@ -549,25 +548,8 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
             break;
         }
 
-        // Guardar todo en archivo
-        case 7:
-        {
-            cout << "Ingresa el nombre que deseas que lleve el archivo: ";
-            cin >> nombre_archivo;
-            nombre_archivo += ".txt";
-
-            for (auto &equipo : equipos)
-            {
-                equipo.escribir_en_archivo(nombre_archivo);
-            }
-
-            cout << "Los datos se han guardado exitosamente. \n";
-
-            break;
-        }
-
         // Cargar datos externos
-        case 8:
+        case 7:
         {
             Equipo equipo;
 
@@ -582,7 +564,7 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
         }
 
         // Imprimir equipos
-        case 9:
+        case 8:
         {
             for (auto &equipo : equipos)
             {
@@ -592,7 +574,7 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
         }
 
         // Salir
-        case 10:
+        case 9:
         {
             cout << "Gracias por usar el programa. Hasta pronto! \n";
             return 0;
