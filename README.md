@@ -6,29 +6,29 @@ A través del uso de estructuras de datos y algoritmos eficientes, el programa p
 El objetivo principal del programa es ser intuitivo y eficaz, proporcionando una experiencia de usuario fluida y fácil de usar. En resumen, el programa es un gestionador de equipos de voleibol que busca simplificar la tarea de organizar y analizar datos, permitiendo a los entrenadores y aficionados tomar decisiones informadas y mejorar su comprensión del juego.
 
 ### A quien le ofrece valor?
-El objetivo principal del programa es ser intuitivo y eficaz, proporcionando una experiencia de usuario fluida y fácil de usar. En resumen, el programa es un gestionador de equipos de voleibol que busca simplificar la tarea de organizar y analizar datos, permitiendo a los entrenadores y aficionados tomar decisiones informadas y mejorar su comprensión del juego.
-El programa ofrece un valor significativo para los entrenadores de equipos de voleibol, al proporcionarles una herramienta eficaz para el análisis y la toma de decisiones.
-Una de las principales ventajas del programa es su capacidad para crear archivos de texto que contienen datos valiosos sobre los equipos, como el número de victorias, derrotas y puntos totales. Esto permite a los entrenadores tener una visión clara y detallada del rendimiento de sus equipos.
-Además, el programa ofrece la posibilidad de visualizar a todos los jugadores de un equipo, lo que facilita la identificación de patrones y tendencias en el juego. La capacidad de ordenar rápidamente tanto a los jugadores de un equipo como a los equipos en sí, es otra característica valiosa del programa.
-Un aspecto destacado del programa es su capacidad para importar archivos de texto existentes que contengan información sobre los equipos. Esto permite a los entrenadores aprovechar la información que ya han recopilado y ordenarla de manera eficaz. Además, el programa genera un nuevo archivo de texto que contiene la información ordenada, lo que permite a los entrenadores almacenarla de manera segura y acceder a ella en el futuro.
+El objetivo principal del programa es ser intuitivo y eficaz, proporcionando una experiencia de usuario fluida y fácil de usar. En resumen, el programa es un gestionador de equipos de voleibol que busca simplificar la tarea de organizar y analizar datos, permitiendo a los entrenadores y aficionados tomar decisiones informadas y mejorar su comprensión del juego.  
+El programa ofrece un valor significativo para los entrenadores de equipos de voleibol, al proporcionarles una herramienta eficaz para el análisis y la toma de decisiones.  
+Una de las principales ventajas del programa es su capacidad para crear archivos de texto que contienen datos valiosos sobre los equipos, como el número de victorias, derrotas y puntos totales. Esto permite a los entrenadores tener una visión clara y detallada del rendimiento de sus equipos.  
+Además, el programa ofrece la posibilidad de visualizar a todos los jugadores de un equipo, lo que facilita la identificación de patrones y tendencias en el juego. La capacidad de ordenar rápidamente tanto a los jugadores de un equipo como a los equipos en sí, es otra característica valiosa del programa.  
+Un aspecto destacado del programa es su capacidad para importar archivos de texto existentes que contengan información sobre los equipos. Esto permite a los entrenadores aprovechar la información que ya han recopilado y ordenarla de manera eficaz. Además, el programa genera un nuevo archivo de texto que contiene la información ordenada, lo que permite a los entrenadores almacenarla de manera segura y acceder a ella en el futuro.  
 
 ### Consideraciones
-1. Al momento de ingresar el nombre de un archivo, ya sea para crear o cargar, no es necesario agregar la extension de este mismo(.txt), el programa lo hace automaticamente.
+1. Al momento de ingresar el nombre de un archivo, ya sea para crear o cargar, no es necesario agregar la extension de este mismo(.txt), el programa lo hace automaticamente.  
 
-2. Para cargar un archivo es necesario que este se encuentre dentro de la misma carpeta en donde se encuentra el programa.
+2. Para cargar un archivo es necesario que este se encuentre dentro de la misma carpeta en donde se encuentra el programa.  
 
-3. Solo se puede cargar un equipo por archivo.
+3. Solo se puede cargar un equipo por archivo.  
 
-4. El formato que debera seguir el archivo para que se cargue es el siguiente:
+4. El formato que debera seguir el archivo para que se cargue es el siguiente:  
 
-    Nombre del equipo | Victorias | Derrotas | Puntos
-    Nombre de jugador | Altura    |
+    Nombre del equipo | Victorias | Derrotas | Puntos   
+    Nombre de jugador | Altura    |  
 
-    Ejemplo:
+    Ejemplo:  
     
-    Tigres            |    20     |    0     |    40
-    Claudio           |   1.81    |
-    Mauricio          |   1.84    |
+    Tigres            |    20     |    0     |    40  
+    Claudio           |   1.81    |  
+    Mauricio          |   1.84    |  
 
 
 ### Para compilar y ejecutar
