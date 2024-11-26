@@ -10,8 +10,9 @@ int main()
     string nombre_equipo, nombre_jugador, nombre_archivo;
     float altura;
     int victorias, derrotas, puntos;
+    Equipo equipoVacio;
 
-    menu_principal(equipos, opcion, nombre_equipo, nombre_jugador, nombre_archivo, altura, victorias, derrotas, puntos);
+    menu_principal(equipos, opcion, nombre_equipo, nombre_jugador, nombre_archivo, altura, victorias, derrotas, puntos, equipoVacio);
     /*
     // Crear un equipo inicial vacio
     Equipo equipo;

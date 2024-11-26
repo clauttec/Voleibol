@@ -346,7 +346,7 @@ void mostrar_menu()
     cout << "Seleccione una opción: ";
 }
 
-int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos)
+int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, string nombre_jugador, string nombre_archivo, float altura, int victorias, int derrotas, int puntos, Equipo equipoVacio)
 {
     while (true)
     {
@@ -551,14 +551,14 @@ int menu_principal(vector<Equipo> equipos, int opcion, string nombre_equipo, str
         // Cargar datos externos
         case 7:
         {
-            Equipo equipo;
-
             cout << "Ingresa el nombre del archivo: ";
             cin >> nombre_archivo;
 
             nombre_archivo += ".txt";
 
-            equipo.cargar_archivo(nombre_archivo, equipo);
+            equipoVacio.cargar_archivo(nombre_archivo, equipoVacio);
+
+            equipos.emplace_back(equipoVacio);
 
             break;
         }
