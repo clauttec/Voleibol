@@ -269,23 +269,30 @@ void Equipo::escribir_en_archivo(const string &nombre_archivo) const
 vector<Equipo> quick_sort_equipos(vector<Equipo> equipos)
 {
     if (equipos.size() <= 1)
-        return equipos;
-
-    Equipo pivote = equipos[0];
-    vector<Equipo> menores, mayores;
-
-    for (size_t i = 1; i < equipos.size(); ++i)
     {
-        if (equipos[i].victorias <= pivote.victorias)
+        return equipos;
+    }
+
+    Equipo pivot = equipos[0];
+    vector<Equipo> menores;
+    vector<Equipo> mayores;
+
+    for (int i = 1; i < equipos.size(); i++)
+    {
+        if (equipos[i].victorias <= pivot.victorias)
+        {
             menores.push_back(equipos[i]);
+        }
         else
+        {
             mayores.push_back(equipos[i]);
+        }
     }
 
     menores = quick_sort_equipos(menores);
     mayores = quick_sort_equipos(mayores);
 
-    menores.push_back(pivote);
+    menores.push_back(pivot);
     menores.insert(menores.end(), mayores.begin(), mayores.end());
 
     return menores;
