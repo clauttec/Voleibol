@@ -1,12 +1,35 @@
 # Voleibol
 
-## Avance 1
+## Sobre el programa...
+El progrma se estructura alrededor de un menú principal que ofrece exactamente 9 opciones, cada una diseñada para realizar una función específica.
+A través del uso de estructuras de datos y algoritmos eficientes, el programa permite ordenar tanto equipos como jugadores de manera rápida y sencilla. Además, ofrece la posibilidad de crear nuevos equipos y jugadores, lo que facilita la gestión de la información y la adaptación a cambios en la composición de los equipos.
+El objetivo principal del programa es ser intuitivo y eficaz, proporcionando una experiencia de usuario fluida y fácil de usar. En resumen, el programa es un gestionador de equipos de voleibol que busca simplificar la tarea de organizar y analizar datos, permitiendo a los entrenadores y aficionados tomar decisiones informadas y mejorar su comprensión del juego.
 
-En este avance del proyecto, se ha implementado un sistema para organizar equipos de voleibol en un torneo. El programa está estructurado en clases, las dos clases principales son Equipo y Jugador, donde un equipo tiene una lista de jugadores.
+### A quien le ofrece valor?
+El objetivo principal del programa es ser intuitivo y eficaz, proporcionando una experiencia de usuario fluida y fácil de usar. En resumen, el programa es un gestionador de equipos de voleibol que busca simplificar la tarea de organizar y analizar datos, permitiendo a los entrenadores y aficionados tomar decisiones informadas y mejorar su comprensión del juego.
+El programa ofrece un valor significativo para los entrenadores de equipos de voleibol, al proporcionarles una herramienta eficaz para el análisis y la toma de decisiones.
+Una de las principales ventajas del programa es su capacidad para crear archivos de texto que contienen datos valiosos sobre los equipos, como el número de victorias, derrotas y puntos totales. Esto permite a los entrenadores tener una visión clara y detallada del rendimiento de sus equipos.
+Además, el programa ofrece la posibilidad de visualizar a todos los jugadores de un equipo, lo que facilita la identificación de patrones y tendencias en el juego. La capacidad de ordenar rápidamente tanto a los jugadores de un equipo como a los equipos en sí, es otra característica valiosa del programa.
+Un aspecto destacado del programa es su capacidad para importar archivos de texto existentes que contengan información sobre los equipos. Esto permite a los entrenadores aprovechar la información que ya han recopilado y ordenarla de manera eficaz. Además, el programa genera un nuevo archivo de texto que contiene la información ordenada, lo que permite a los entrenadores almacenarla de manera segura y acceder a ella en el futuro.
 
-El programa permite organizar a los equipos según sus victorias y a los jugadores de un equipo según su altura, utilizando algoritmos de ordenamiento eficientes.
+### Consideraciones
+1. Al momento de ingresar el nombre de un archivo, ya sea para crear o cargar, no es necesario agregar la extension de este mismo(.txt), el programa lo hace automaticamente.
 
-Se ha implementado el algoritmo Quick Sort para ordenar los equipos por el número de victorias y el Merge Sort para ordenar a los jugadores por su altura, seleccionando estos algoritmos por sus propiedades y rendimiento en escenarios diferentes, que se explicarán más adelante.
+2. Para cargar un archivo es necesario que este se encuentre dentro de la misma carpeta en donde se encuentra el programa.
+
+3. Solo se puede cargar un equipo por archivo.
+
+4. El formato que debera seguir el archivo para que se cargue es el siguiente:
+
+    Nombre del equipo | Victorias | Derrotas | Puntos
+    Nombre de jugador | Altura    |
+
+    Ejemplo:
+    
+    Tigres            |    20     |    0     |    40
+    Claudio           |   1.81    |
+    Mauricio          |   1.84    |
+
 
 ### Para compilar y ejecutar
 
