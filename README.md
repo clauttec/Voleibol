@@ -66,3 +66,28 @@ Se selecciono la lista doblemente ligada debido a que permite la facil manipulac
 He desarrollado funciones para imprimir y listar los jugadores, convirtiendo la lista doblemente ligada en un vector para poder aplicar el algoritmo de ordenamiento. Este mecanismo permite organizar la lista de jugadores por altura y presentarla de forma clara.
 
 Utilizando la libreria ifstream he desarrollado una nueva funcion para leer los datos de un archivo de texto, distribuyendo cada dato del archivo de texto en los atributos adecuados del objeto Equipo y su lista de jugadores. De igual forma, utilizando la libreria ifstream realice una funcion que permite escribir datos en un archivo, esta funcion guarda el estado del objeto Equipo y su lista de jugadores en un archivo de texto.
+
+## Problemas 
+
+### Enlace a perfil
+
+https://leetcode.com/u/TSP87/ 
+
+### Enlace a problemas y soluciones
+
+Problema 2:  
+
+    1721.Swapping Nodes in a Linked List  
+    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/  
+
+    Solucion:  
+    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/submissions/1463157941/  
+
+Problema 3:  
+
+    116. Populating Next Right Pointers in Each Node  
+    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/  
+
+    Solucion:  
+    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/submissions/1463024816/  
+
