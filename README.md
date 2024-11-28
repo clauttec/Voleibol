@@ -75,7 +75,7 @@ https://leetcode.com/u/TSP87/
 
 ### Enlace a problemas y soluciones
 
-Problema 2:  
+#### Problema 2:  
 
     1721.Swapping Nodes in a Linked List  
     https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/  
@@ -90,7 +90,7 @@ Problema 2:
 
 La resolucion de este problema fue muy facil, nos dan una lista ligada simple y un entero "k" y nos piden intercambiar el valor del nodo en la ubicacion k empezando desde el principio con el valor del nodo en la ubicacion k empezando desde el final, para obtener un apuntador que apunte al nodo de la izquierda es muy facil, solo debemos iterar k-1 veces, sin embargo para obtener el nodo de la derecha es un poco mas dificil, ya que comente anteriormente la lista que se nos da es una lista ligada SIMPLE por lo que no podemos simplemente empezar desde el final, despues de pensarlo un poco me di cuenta que podia obtener la ubicacion del nodo de la derecha a traves de iterar longitud-k, entonces primero obtuve la longitud de la lista ligada a traves de un ciclo while para despues poder restarlo por k. Por ultimo, una vez que obtenemos los nodos los intercambiamos y retornamos la cabeza de la lista.
 
-Problema 3:  
+#### Problema 3:  
 
     116. Populating Next Right Pointers in Each Node  
     https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
@@ -101,3 +101,6 @@ Problema 3:
     Post (En caso de que no tenga acceso a la submission):  
     https://leetcode.com/problems/swapping-nodes-in-a-linked-list/solutions/6091294/tc1031-problema-2/  
 
+#### Que hice?
+
+Cuando vi la imagen que venia de ejemplo en el problema automaticamente pense en BFS (Metodo de busqueda por anchura), uno de los temas que vimos en clase, entonces en vez de hacer una busqueda por profundidad, dividiremos el arbol por niveles y recorreremos cada uno de estos. Al principio puede parecer un poco dificil conectar cada nodo con el nodo que se encuentra a su derecha, sin embargo si leemos bien el contexto del problema y la definicion del arbol que se nos da nos daremos cuenta que el arbol que se nos da es un arbol binario perfecto por lo que padre tendra un hijo izquiero y uno derecho, y lo que es mas importante que cada hijo estara conectado con el otro hijo por su padre. Considerando esto podremos conectar a cada nodo con el nodo que se encuentra a la derecha siempre y cuando tengan el mismo padre, para poder conectar un nodo a un nodo con diferente padre, tendremos que aprovechar la estructura que se nos da del arbol y utilizar el apuntador next, buscaremos el hijo izquiero del next del nodo padre y haremos que el hijo derecho del padre apunte hacia este nodo. Para poder movernos entre niveles tendremos que crear un apuntador que siempre apunte hacia el hijo izquiero del nodo padre (nxt), tendremos que verificar si el next del nodo padre es nulo y en caso de que sea nulo moveremos el apuntador que apunta hacia el nodo padre hacia nxt y nxt hacia el hijo izquiero del padre.
