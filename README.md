@@ -86,6 +86,10 @@ Problema 2:
     Post (En caso de que no tenga acceso a la submission):  
     https://leetcode.com/problems/populating-next-right-pointers-in-each-node/solutions/6091310/tc1031-problema-3
 
+#### Que hice?
+
+La resolucion de este problema fue muy facil, nos dan una lista ligada simple y un entero "k" y nos piden intercambiar el valor del nodo en la ubicacion k empezando desde el principio con el valor del nodo en la ubicacion k empezando desde el final, para obtener un apuntador que apunte al nodo de la izquierda es muy facil, solo debemos iterar k-1 veces, sin embargo para obtener el nodo de la derecha es un poco mas dificil, ya que comente anteriormente la lista que se nos da es una lista ligada SIMPLE por lo que no podemos simplemente empezar desde el final, despues de pensarlo un poco me di cuenta que podia obtener la ubicacion del nodo de la derecha a traves de iterar longitud-k, entonces primero obtuve la longitud de la lista ligada a traves de un ciclo while para despues poder restarlo por k. Por ultimo, una vez que obtenemos los nodos los intercambiamos y retornamos la cabeza de la lista.
+
 Problema 3:  
 
     116. Populating Next Right Pointers in Each Node  
