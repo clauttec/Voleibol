@@ -81,13 +81,13 @@ Problema 2:
     https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/  
 
     Solucion:  
-    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/submissions/1463157941/  
+    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/submissions/1463157941  
 
 Problema 3:  
 
     116. Populating Next Right Pointers in Each Node  
-    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/  
+    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
 
     Solucion:  
-    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/submissions/1463024816/  
+    https://leetcode.com/problems/populating-next-right-pointers-in-each-node/submissions/1463024816    
 
