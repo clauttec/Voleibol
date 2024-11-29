@@ -120,7 +120,10 @@ La resolucion de este problema fue muy facil, nos dan una lista ligada simple y 
     https://leetcode.com/problems/populating-next-right-pointers-in-each-node/submissions/1463024816    
 
     Post (En caso de que no tenga acceso a la submission):  
-    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/solutions/6091294/tc1031-problema-2/  
+    https://leetcode.com/problems/swapping-nodes-in-a-linked-list/solutions/6091294/tc1031-problema-2/ 
+
+    Video:
+    https://drive.google.com/file/d/1vELZMSmpMPyME0y_dxkYUx2fTtF4LQQ8/view?usp=sharing 
 
 #### Que hice?
 
