@@ -75,6 +75,24 @@ https://leetcode.com/u/TSP87/
 
 ### Enlace a problemas y soluciones
 
+#### Problema 1:
+    
+    15.3Sum
+    https://leetcode.com/problems/3sum/description/
+
+    Solucion:
+    https://leetcode.com/problems/3sum/submissions/1465646063
+
+    Post (En caso de que no tenga acceso a la submission):
+    https://leetcode.com/problems/3sum/solutions/6095482/problema-1/
+
+    Video:
+    https://drive.google.com/file/d/1AuDZlaqEdJwvVQl6blBOtj495e1XIqAI/view?usp=sharing
+
+#### Que hice?
+
+La resolucion de este problema me parecio bastante complicado y me vi forzado en realizar varios intentos fallidos, despues de probar y fallar encontre un metodo en el que primero ordenamos la lista que se nos da a traves de un selection sort, una vez que tengamos ordenada la lista podemos evitar los tripletes duplicados verificndo que el valor al que esta apuntando nuestro apuntador head no sea igual al valor de head-1 osea que no sea igual al valor que se encontraba antes de este, en caso de que si lo sea nos saltamos este valor para asi evitar duplicados, para encontrar los valores que buscamos tenemos que declarar dos apuntadores mas, primero el apuntador de la izquierda que apunta a head+1 es decir al valor siguiente de head y el segundo apuntador seria el de la derecha que apunta al ultimo valor de la lista, lo que hice en la solucion es aprovechar que nuestra lista se encuentra ordenada para asi encontrar el triplete que al sumar su resultado sea 0 entonces, cada vez que movemos ya sea el apuntador de la izquierda o el apuntador de la derecha actualizamos nuestra variable sum con la el nuevo resultado de la suma, si sum es mayor que 0 lo que queremos hacer es mover nuestro apuntador de la derecha hacia la izquierda porque estamos buscando que el resultado de la suma sea mas pequeño y ya que nuestra lista se encuentra ordenada movernos hacia la izquierda significa tambien disminuir el resultado de la suma, con este mismo principio si sum es menor que 0 lo que queremos hacer es mover nuestro apuntador de la izquierda hacia la derecha porque lo que buscamos es un total de suma mas grande que el que tenemos, este ciclo se va a repetir siempre y cuando el apuntador de la izquierda sea menor que el apuntador de la derecha, si la suma es = 0, entonces guardamos el triplete en una lista, y la agregamos a la lista de resultado que es lo que vamos a retornar, ademas de agregar el triplete al resultado moveremos nuestro apuntador del head hacia la derecha y recolocaremos nuestros apuntadores a sus respectivas posiciones (l = head + 1 | r = longitud - 1), en caso de que no encontremos ningun triplete lo que haremos sera de igual forma mover el apuntador del head a la derecha y reacomodar los otros apuntadores, y asi es como resolvemos este problema.
+
 #### Problema 2:  
 
     1721.Swapping Nodes in a Linked List  
@@ -85,6 +103,9 @@ https://leetcode.com/u/TSP87/
 
     Post (En caso de que no tenga acceso a la submission):  
     https://leetcode.com/problems/populating-next-right-pointers-in-each-node/solutions/6091310/tc1031-problema-3
+
+    Video:
+    https://drive.google.com/file/d/1gW_YA3Ondi6yUrFvMgLeITWOOLYHnzD1/view?usp=sharing
 
 #### Que hice?
 
